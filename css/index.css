@@ -1,0 +1,256 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background: linear-gradient(45deg, #fff, #fff);
+    overflow-x: hidden;
+}
+
+header.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    background: linear-gradient(180deg, #fff,#fff, #76cced);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+header img {
+width: 300;
+height: 300px;
+}
+
+/* Estilo básico dos ícones */
+.header-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.header-icons img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+    section .catalogue {
+        padding: 15px; /* Reduza o padding interno em dispositivos menores */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    section .catalogue {
+        padding: 10px; /* Ajuste ainda mais para telas pequenas */
+    }
+}
+
+/* Animação de brilho */
+.glowing {
+    animation: glow 2s infinite;
+}
+
+@keyframes glow {
+    0% {
+        filter: drop-shadow(0 0 5px #fff) drop-shadow(0 0 10px #76cced);
+    }
+    50% {
+        filter: drop-shadow(0 0 15px #76cced) drop-shadow(0 0 30px #76cced);
+    }
+    100% {
+        filter: drop-shadow(0 0 5px #fff) drop-shadow(0 0 10px #76cced);
+    }
+}
+
+/* Efeito hover nos ícones */
+.header-icons img:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 20px #76cced);
+}
+
+.title {
+    font-size: 3em;
+    animation: fadeIn 2s;
+}
+
+.subtitle {
+    font-size: 1.5em;
+    margin-top: 10px;
+    animation: fadeIn 3s;
+}
+
+main {
+    padding: 50px 20px;
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+}
+
+section {
+    margin: 50px 0;
+}
+
+section p {
+    text-align: justify;
+}
+
+section .catalogue {
+    background: linear-gradient(180deg, #fff, #76cced, #fff);
+    width: 100%; /* Use 100% em vez de 100vw */
+    margin: 0; /* Remove margens */
+    padding: 20px; /* Adiciona espaçamento interno */
+    border-radius: 0; /* Remove cantos arredondados */
+    box-sizing: border-box; /* Inclui padding no cálculo do tamanho */
+    position: relative;
+}
+
+section .catalogue img {
+    width: 50%; /* Mantém a imagem responsiva */
+    max-width: 170px; /* Define um tamanho máximo */
+    height: auto;
+    transition: transform 0.3s ease-in-out; /* Animação suave ao passar o mouse */
+    border-radius: 30px; /* Adicione bordas arredondadas, se desejar */
+}
+
+section .catalogue img:hover {
+    transform: scale(1.1); /* Aumenta a imagem em 10% */
+
+}
+
+@media screen and (max-width: 768px) {
+    section .catalogue {
+        padding: 15px; /* Reduza o padding em telas médias */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    section .catalogue {
+        padding: 10px; /* Ajuste ainda mais para telas pequenas */
+    }
+}
+
+
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.1);
+}
+
+form input, form textarea, form button {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 1em;
+}
+
+form button {
+    background-color: #2575fc;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #1a5bb8;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #76cced;
+    color: #fff;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Botão flutuante do WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    z-index: 1000;
+    border-radius: 50%;
+    background-color: #76cced;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: float-glow 2s infinite;
+}
+
+.whatsapp-float img {
+    width: 60px;
+    height: 60px;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Animação de brilho */
+@keyframes float-glow {
+    0% {
+        box-shadow: 0 0 5px #76cced, 0 0 10px #76cced;
+    }
+    50% {
+        box-shadow: 0 0 15px #76cced, 0 0 30px #76cced;
+    }
+    100% {
+        box-shadow: 0 0 5px #76cced, 0 0 10px #76cced;
+    }
+}
+
+.ourjob {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+    color: #333;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden; /* Esconde o conteúdo que ultrapassa a área visível */
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 10px;
+    transition: transform 1s ease-in-out; /* Animação suave na transição */
+    will-change: transform; /* Melhora o desempenho */
+}
+
+.carousel img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    user-select: none; /* Impede a seleção acidental de imagens */
+    pointer-events: none; /* Melhora a experiência ao deslizar */
+}
