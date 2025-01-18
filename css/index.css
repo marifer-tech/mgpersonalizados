@@ -88,7 +88,7 @@ height: 300px;
 main {
     padding: 50px 20px;
     background-color: #fff;
-    color: #333;
+    color: #000000;
     text-align: center;
 }
 
@@ -100,42 +100,76 @@ section p {
     text-align: justify;
 }
 
-section .catalogue {
-    background: linear-gradient(180deg, #fff,#fff, #ffc4e8,#76cced, #fff);
-    width: 100%; /* Use 100% em vez de 100vw */
-    margin: 0; /* Remove margens */
-    padding: 20px; /* Adiciona espaçamento interno */
-    border-radius: 0; /* Remove cantos arredondados */
-    box-sizing: border-box; /* Inclui padding no cálculo do tamanho */
+section.catalogue {
     position: relative;
+    padding: 40px 20px; /* Adiciona mais espaçamento */
+    text-align: center;
+    background: linear-gradient(
+        90deg, 
+        rgba(255, 255, 255, 0.2), 
+        #ffc4e8, 
+        #76cced, 
+        rgba(255, 255, 255, 0.2)
+    ); /* Gradiente horizontal mais suave */
+    overflow: hidden; /* Garante que nada extrapole */
 }
 
-section .catalogue img {
-    width: 50%; /* Mantém a imagem responsiva */
-    max-width: 170px; /* Define um tamanho máximo */
+.catalogue img {
+    display: block;
+    margin: 0 auto;
+    width: 50%; /* Ajusta conforme necessário */
+    max-width: 300px;
     height: auto;
-    transition: transform 0.3s ease-in-out; /* Animação suave ao passar o mouse */
-    border-radius: 30px; /* Adicione bordas arredondadas, se desejar */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Adiciona animação ao hover */
 }
 
-section .catalogue img:hover {
-    transform: scale(1.1); /* Aumenta a imagem em 10% */
-
+.catalogue img:hover {
+    transform: scale(1.1); /* Aumenta suavemente a imagem */
+    filter: brightness(1.1); /* Aumenta o brilho ao passar o mouse */
 }
 
+/* Adiciona uma animação sutil à seção */
+.catalogue::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 20%, transparent 80%);
+    pointer-events: none; /* Não interfere com cliques */
+    animation: glow-effect 3s infinite alternate; /* Efeito pulsante */
+}
+
+@keyframes glow-effect {
+    from {
+        opacity: 0.5;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsividade */
 @media screen and (max-width: 768px) {
-    section .catalogue {
-        padding: 15px; /* Reduza o padding em telas médias */
+    section.catalogue {
+        padding: 20px; /* Reduz padding em telas menores */
+    }
+
+    .catalogue img {
+        width: 70%; /* Ajusta o tamanho da imagem no mobile */
     }
 }
 
 @media screen and (max-width: 480px) {
-    section .catalogue {
+    section.catalogue {
         padding: 10px; /* Ajuste ainda mais para telas pequenas */
     }
+
+    .catalogue img {
+        width: 80%; /* Aumenta a responsividade */
+    }
 }
-
-
 
 .gallery-grid {
     display: grid;
@@ -230,8 +264,6 @@ height: 60px;
     }
 }
 
-
-
 .ourjob {
     text-align: center;
     padding: 50px 20px;
@@ -260,4 +292,73 @@ height: 60px;
     border-radius: 10px;
     user-select: none; /* Impede a seleção acidental de imagens */
     pointer-events: none; /* Melhora a experiência ao deslizar */
+}
+
+.depoimentos-slider {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas no desktop */
+    gap: 20px; /* Espaço entre os cartões */
+    width: 100%; /* Garante que o slider ocupe toda a largura */
+    transition: transform 0.5s ease-in-out;
+    overflow: hidden;
+}
+
+.depoimento-card {
+    background: linear-gradient(180deg, #ffc4e8, #fff, #fff, #76cced);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    box-sizing: border-box; /* Inclui bordas e padding no cálculo da largura */
+}
+
+.depoimento-nome {
+    font-size: 1em;
+    font-weight: bold;
+    color: #000000;
+    margin: 0; /* Remove margens extras */
+}
+
+.depoimento-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #76cced;
+    object-fit: cover;
+    margin-bottom: 10px; /* Espaço entre a imagem e o nome */
+}
+
+.depoimento-text {
+    flex-grow: 1; /* Ocupa o espaço restante no card */
+    font-size: 1em;
+    font-style: italic;
+    margin-bottom: 20px; /* Espaçamento entre o texto e os elementos inferiores */
+    color: #333;
+    text-align: center;
+}
+
+/* Responsividade para mobile */
+@media (max-width: 768px) {
+    .depoimentos-slider {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas no mobile */
+        grid-template-rows: repeat(2, auto); /* 2 linhas no mobile */
+        gap: 15px; /* Espaço ajustado para telas menores */
+    }
+
+    .depoimento-card {
+        padding: 15px; /* Ajusta o padding no mobile */
+    }
+}
+
+.contact-us img {
+    width: 800px;
+    height: auto;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .contact-us img {
+        width: 350px;
+        height: auto;
+    }
 }

@@ -18,7 +18,7 @@ document.addEventListener("scroll", () => {
 document.querySelectorAll("section").forEach(el => {
     el.style.opacity = 0;
     el.style.transform = "translateY(20px)";
-    el.style.transition = "all 0.5s ease";
+    el.style.transition = "all 0.1s ease";
 });
 
 const track = document.querySelector('.carousel-track');
@@ -71,6 +71,7 @@ track.addEventListener('mouseup', (e) => {
 track.addEventListener('mouseleave', () => {
     if (!isDragging) return;
     isDragging = false;
-    track.style.transition = 'transform 0.5s ease-in-out';
+    track.style.transition = 'transform 0.1s ease-in-out';
     track.style.transform = `translateX(${position}px)`;
 });
+
