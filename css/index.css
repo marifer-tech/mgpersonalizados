@@ -15,7 +15,7 @@ header.hero {
     align-items: center;
     text-align: center;
     height: 100vh;
-    background: linear-gradient(180deg, #fff,#fff, #76cced);
+    background: linear-gradient(180deg, #ffc4e8, #fff,#fff, #76cced);
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 }
 
@@ -35,6 +35,12 @@ height: 300px;
     width: 50px;
     height: 50px;
     transition: transform 0.3s ease;
+}
+
+/* Efeito hover nos ícones */
+.header-icons img:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 20px #76cced);
 }
 
 @media screen and (max-width: 768px) {
@@ -66,11 +72,7 @@ height: 300px;
     }
 }
 
-/* Efeito hover nos ícones */
-.header-icons img:hover {
-    transform: scale(1.2);
-    filter: drop-shadow(0 0 20px #76cced);
-}
+
 
 .title {
     font-size: 3em;
@@ -99,7 +101,7 @@ section p {
 }
 
 section .catalogue {
-    background: linear-gradient(180deg, #fff, #76cced, #fff);
+    background: linear-gradient(180deg, #fff,#fff, #ffc4e8,#76cced, #fff);
     width: 100%; /* Use 100% em vez de 100vw */
     margin: 0; /* Remove margens */
     padding: 20px; /* Adiciona espaçamento interno */
@@ -198,7 +200,7 @@ height: 60px;
     height: 60px;
     z-index: 1000;
     border-radius: 50%;
-    background-color: #76cced;
+    background: linear-gradient(180deg, #f37ac5, #fff, #5ac8f3);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -219,16 +221,16 @@ height: 60px;
 
 /* Animação de brilho */
 @keyframes float-glow {
-    0% {
-        box-shadow: 0 0 5px #76cced, 0 0 10px #76cced;
-    }
+    
     50% {
-        box-shadow: 0 0 15px #76cced, 0 0 30px #76cced;
+        box-shadow: 0 0 15px #fa66c1, 0 0 30px #fa66c1;
     }
     100% {
-        box-shadow: 0 0 5px #76cced, 0 0 10px #76cced;
+        box-shadow: 0 0 35px #00b4fc, 0 0 70px #00b4fc;
     }
 }
+
+
 
 .ourjob {
     text-align: center;
