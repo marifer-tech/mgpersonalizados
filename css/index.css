@@ -2,11 +2,32 @@ html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-    font-family: Arial, sans-serif;
     color: #fff;
     background: linear-gradient(45deg, #fff, #fff);
     overflow-x: hidden;
 }
+
+h1, h2, .logo-text {
+    font-family: 'Pacifico', cursive;
+    font-size: 60px;
+}
+
+p, body {
+    font-family: 'Raleway', sans-serif;
+}
+
+@keyframes blink {
+    0%, 100% {
+      opacity: 1; /* Totalmente visível */
+    }
+    50% {
+      opacity: 0; /* Invisível */
+    }
+  }
+  
+  h3 {
+    animation: blink 1s infinite; /* Define a animação "blink" */
+  }
 
 header.hero {
     display: flex;
@@ -22,7 +43,13 @@ header.hero {
 header img {
 width: 300;
 height: 300px;
+transition: transform 0.3s ease;
 }
+
+header img:hover {
+    transform: scale(1.7);
+}
+
 
 /* Estilo básico dos ícones */
 .header-icons {
@@ -43,17 +70,6 @@ height: 300px;
     filter: drop-shadow(0 0 20px #76cced);
 }
 
-@media screen and (max-width: 768px) {
-    section .catalogue {
-        padding: 15px; /* Reduza o padding interno em dispositivos menores */
-    }
-}
-
-@media screen and (max-width: 480px) {
-    section .catalogue {
-        padding: 10px; /* Ajuste ainda mais para telas pequenas */
-    }
-}
 
 /* Animação de brilho */
 .glowing {
@@ -101,44 +117,29 @@ section p {
 }
 
 section.catalogue {
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: relative;
-    padding: 40px 20px; /* Adiciona mais espaçamento */
     text-align: center;
     background: linear-gradient(
-        90deg, 
-        rgba(255, 255, 255, 0.2), 
-        #ffc4e8, 
-        #76cced, 
-        rgba(255, 255, 255, 0.2)
+        180deg, 
+        #ffc4e8,
+        #fff,
+        #fff, 
+        #76cced
+      
     ); /* Gradiente horizontal mais suave */
-    overflow: hidden; /* Garante que nada extrapole */
 }
 
-.catalogue img {
-    display: block;
-    margin: 0 auto;
-    width: 50%; /* Ajusta conforme necessário */
-    max-width: 300px;
-    height: auto;
-    transition: transform 0.3s ease, filter 0.3s ease; /* Adiciona animação ao hover */
+section.catalogue img{
+    transition: transform 0.3s ease;
+    width: 600px;
+    padding: 40px;
 }
 
-.catalogue img:hover {
-    transform: scale(1.1); /* Aumenta suavemente a imagem */
-    filter: brightness(1.1); /* Aumenta o brilho ao passar o mouse */
-}
-
-/* Adiciona uma animação sutil à seção */
-.catalogue::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 20%, transparent 80%);
-    pointer-events: none; /* Não interfere com cliques */
-    animation: glow-effect 3s infinite alternate; /* Efeito pulsante */
+section.catalogue img:hover {
+    transform: scale(1.1); /* Amplia a imagem suavemente */
 }
 
 @keyframes glow-effect {
@@ -156,8 +157,9 @@ section.catalogue {
         padding: 20px; /* Reduz padding em telas menores */
     }
 
-    .catalogue img {
-        width: 70%; /* Ajusta o tamanho da imagem no mobile */
+    section.catalogue img {
+        width: 250px;
+        height: auto;
     }
 }
 
@@ -165,9 +167,27 @@ section.catalogue {
     section.catalogue {
         padding: 10px; /* Ajuste ainda mais para telas pequenas */
     }
+}
 
-    .catalogue img {
-        width: 80%; /* Aumenta a responsividade */
+.catalogue-wpp img {
+    max-width: 800px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.catalogue-wpp img:hover {
+    transform: scale(1.5); /* Amplia a imagem suavemente */
+}
+
+@media (max-width: 768px) {
+    .catalogue-wpp img {
+        width: 300px;
+        }
+}
+
+@media (max-width: 768px) {
+    .catalogue-wpp img:hover {
+        transform: scale(1.1);
     }
 }
 
@@ -297,10 +317,9 @@ height: 60px;
 .depoimentos-slider {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 colunas no desktop */
-    gap: 20px; /* Espaço entre os cartões */
+    gap: 5px; /* Espaço entre os cartões */
     width: 100%; /* Garante que o slider ocupe toda a largura */
     transition: transform 0.5s ease-in-out;
-    overflow: hidden;
 }
 
 .depoimento-card {
@@ -310,6 +329,11 @@ height: 60px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
     box-sizing: border-box; /* Inclui bordas e padding no cálculo da largura */
+    transition: transform 0.3s ease;
+}
+
+.depoimento-card:hover {
+    transform: scale(1.2);
 }
 
 .depoimento-nome {
@@ -354,11 +378,22 @@ height: 60px;
     width: 800px;
     height: auto;
     justify-content: center;
+    transition: transform 0.3s ease;
+    padding: 0.3em;
+}
+
+.contact-us img:hover {
+    transform: scale(1.2);
 }
 
 @media (max-width: 768px) {
     .contact-us img {
-        width: 350px;
-        height: auto;
+        width: 300px;
+        }
+}
+
+@media (max-width: 768px) {
+    .contact-us img:hover {
+        transform: scale(1.1);
     }
 }
