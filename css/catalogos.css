@@ -25,7 +25,7 @@ body {
 
 /* Card individual */
 .card {
-  background-color: #fff;     
+ background: linear-gradient(90deg, #ffc4e8, #fff, #fff, #76cced);    
   border: 1px solid #ddd;     
   border-radius: 8px;         
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
