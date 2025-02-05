@@ -1,1 +1,48 @@
-bod
+/* Reset básico (opcional) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+/* Container de cards (usando Grid) */
+.card-container {
+  display: grid;
+  /* Ajusta a quantidade de colunas dinamicamente */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;                  /* espaçamento entre os cards */
+  max-width: 1200px;         /* largura máxima */
+  margin: 2rem auto;         /* centraliza e dá espaço vertical */
+  padding: 0 1rem;           /* espaço interno lateral */
+}
+
+/* Card individual */
+.card {
+  background-color: #fff;     
+  border: 1px solid #ddd;     
+  border-radius: 8px;         
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 1.5rem;            /* espaço interno do card */
+  text-align: center;         /* centraliza o conteúdo do card */
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efeito no hover (opcional) */
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Título dentro de cada card */
+.card h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
