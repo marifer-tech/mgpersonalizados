@@ -19,7 +19,7 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;                  /* espaçamento entre os cards */
   max-width: 1500px;         /* largura máxima */
-  margin: 8rem auto;         /* centraliza e dá espaço vertical */
+  margin: 6rem auto;         /* centraliza e dá espaço vertical */
   padding: 0 1rem;           /* espaço interno lateral */
 }
 
@@ -29,7 +29,7 @@ body {
   border: 1px solid #ddd;     
   border-radius: 8px;         
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  padding: 4rem;            /* espaço interno do card */
+  padding: 3rem;            /* espaço interno do card */
   text-align: center;         /* centraliza o conteúdo do card */
 
   transition: transform 0.2s ease, box-shadow 0.2s ease;
