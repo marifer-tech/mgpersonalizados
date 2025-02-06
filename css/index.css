@@ -176,7 +176,7 @@ section.catalogue img:hover {
 }
 
 .catalogue-wpp img:hover {
-    transform: scale(1.5); /* Amplia a imagem suavemente */
+    transform: scale(1.1); /* Amplia a imagem suavemente */
 }
 
 @media (max-width: 768px) {
@@ -333,7 +333,7 @@ height: 60px;
 }
 
 .depoimento-card:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 .depoimento-nome {
@@ -383,7 +383,7 @@ height: 60px;
 }
 
 .contact-us img:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 @media (max-width: 768px) {
