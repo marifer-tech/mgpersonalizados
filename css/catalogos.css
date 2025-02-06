@@ -1,8 +1,9 @@
-/* Reset básico (opcional) */
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
 /* Corpo da página */
@@ -13,62 +14,81 @@ body {
 }
 
 
-.logo {
-transition: transform 0.3s;
-}
 
-.logo:hover {
-transform: scale (1.1);
+/* Logo */
+.logo {
+  text-align: center;
+  margin-top: 20px;
 }
 
 .logo img {
-width: 150px;
-margin: 20px;
+  width: 150px;
+  margin: 20px;
+  transition: transform 0.3s ease-in-out;
+}
 
+.logo img:hover {
+  transform: scale(1.1);
 }
 
 
-
-/* Container de cards (usando Grid) */
+/* Container de cards */
 .card-container {
   display: grid;
-  /* Ajusta a quantidade de colunas dinamicamente */
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 3rem;                  /* espaçamento entre os cards */
-  max-width: 2000px;         /* largura máxima */
-  margin: 6rem auto;         /* centraliza e dá espaço vertical */
-  padding: 0 10rem;           /* espaço interno lateral */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 2rem;
 }
 
-/* Card individual */
+/* Card */
 .card {
- background: linear-gradient(90deg, #ffc4e8, #fff, #fff, #76cced);    
-  border: 1px solid #000000;     
-  border-radius: 8px;         
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  padding: 3rem;            /* espaço interno do card */
-  text-align: center;         /* centraliza o conteúdo do card */
-
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-@media (max-width: 768px) {
-  header img {
-    width: 150px;
-    margin: 10px;
-  }
-}
-
-/* Efeito no hover (opcional) */
-.card:hover {
-  transform: scale(1.1);
+  background: linear-gradient(90deg, #ffc4e8, #fff, #fff, #76cced);    
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
 }
 
-/* Título dentro de cada card */
-.card h1 {
-  font-size: 1.7rem;
-  margin-bottom: 1rem;
-  margin-top: 1.5rem;
+/* Hover do card */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
 
+/* Título do card */
+.card h1 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #0000000;
+}
+
+/* Link dentro dos cards */
+.card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    padding: 0 1rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  .card h1 {
+    font-size: 1.5rem;
+  }
+
+  .logo img {
+    width: 120px;
+  }
 }
