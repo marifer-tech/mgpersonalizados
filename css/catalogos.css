@@ -8,25 +8,42 @@
 /* Corpo da página */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f7f7f7;
-  color: #333;
+  background-color: #b3a3a34d;
+  color: #000000;
 }
+
+
+.logo {
+transition: transform 0.3s;
+}
+
+.logo:hover {
+transform: scale (1.1);
+}
+
+.logo img {
+width: 150px;
+margin: 20px;
+
+}
+
+
 
 /* Container de cards (usando Grid) */
 .card-container {
   display: grid;
   /* Ajusta a quantidade de colunas dinamicamente */
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;                  /* espaçamento entre os cards */
-  max-width: 1500px;         /* largura máxima */
-  margin: 2rem auto;         /* centraliza e dá espaço vertical */
-  padding: 0 1rem;           /* espaço interno lateral */
+  gap: 3rem;                  /* espaçamento entre os cards */
+  max-width: 2000px;         /* largura máxima */
+  margin: 6rem auto;         /* centraliza e dá espaço vertical */
+  padding: 0 10rem;           /* espaço interno lateral */
 }
 
 /* Card individual */
 .card {
  background: linear-gradient(90deg, #ffc4e8, #fff, #fff, #76cced);    
-  border: 1px solid #ddd;     
+  border: 1px solid #000000;     
   border-radius: 8px;         
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   padding: 3rem;            /* espaço interno do card */
@@ -35,14 +52,23 @@ body {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+@media (max-width: 768px) {
+  header img {
+    width: 150px;
+    margin: 10px;
+  }
+}
+
 /* Efeito no hover (opcional) */
 .card:hover {
-  transform: translateY(-2px);
+  transform: scale(1.1);
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
 /* Título dentro de cada card */
 .card h1 {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   margin-bottom: 1rem;
+  margin-top: 1.5rem;
+
 }
